@@ -1,0 +1,49 @@
+.contact .section-body {
+  max-width: 100%;
+}
+
+.links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+  margin: 2.25rem 0 0;
+  padding: 0;
+}
+
+.links-mail {
+  margin-right: 0.6rem;
+  padding-right: 2.1rem;
+  border-right: 1px solid var(--line);
+}
+
+.links a {
+  display: block;
+  padding: 0.4rem;
+  margin: -0.4rem;
+  color: var(--muted);
+  transition: color 0.3s ease, transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.links svg {
+  display: block;
+  width: 1.7rem;
+  height: 1.7rem;
+}
+
+.links a:focus-visible {
+  color: var(--text);
+  transform: translateY(-2px);
+}
+
+@media (hover: hover) {
+  .links a:hover {
+    color: var(--text);
+    transform: translateY(-2px);
+  }
+}
+
+.links a:focus-visible {
+  outline: 1px solid var(--text);
+  outline-offset: 5px;
+}

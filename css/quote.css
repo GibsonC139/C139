@@ -1,0 +1,79 @@
+.quote-section .section-body {
+  max-width: 62ch;
+}
+
+.quote {
+  margin: 0;
+  cursor: pointer;
+}
+
+.quote.is-revealed {
+  cursor: default;
+}
+
+.quote-text {
+  position: relative;
+  margin: 0;
+  font-size: clamp(1.3rem, 2.6vw, 1.8rem);
+  font-weight: 300;
+  line-height: 1.45;
+  letter-spacing: -0.015em;
+  color: var(--text);
+  text-wrap: pretty;
+  cursor: pointer;
+  outline: none;
+}
+
+.quote-inner {
+  display: block;
+  transition: opacity 0.45s cubic-bezier(0.23, 1, 0.32, 1), filter 0.45s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.js .quote:not(.is-revealed) .quote-inner {
+  opacity: 0;
+  filter: blur(6px);
+  user-select: none;
+}
+
+.spoiler-canvas {
+  position: absolute;
+  pointer-events: none;
+}
+
+.quote-text:focus-visible {
+  outline: 1px solid var(--line-strong);
+  outline-offset: 14px;
+}
+
+.quote.is-revealed .quote-inner {
+  filter: blur(0);
+  opacity: 1;
+  user-select: text;
+}
+
+.quote.is-revealed .quote-text {
+  cursor: default;
+}
+
+.quote-hint {
+  margin-top: 1.75rem;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 300;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  transition: opacity 0.4s ease, transform 0.4s ease, color 0.3s ease;
+}
+
+@media (hover: hover) {
+  .quote:hover .quote-hint {
+    color: var(--text);
+  }
+}
+
+.quote.is-revealed .quote-hint {
+  opacity: 0;
+  transform: translateY(-4px);
+  pointer-events: none;
+}

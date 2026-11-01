@@ -1,0 +1,164 @@
+.projects {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--line);
+}
+
+.project {
+  display: grid;
+  grid-template-columns: 3.5rem 1fr auto 2rem;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.75rem 0;
+  border-bottom: 1px solid var(--line);
+  transition: padding 0.45s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease;
+}
+
+@media (hover: hover) {
+  .project:hover {
+    padding-left: 0.75rem;
+  }
+
+  .projects:hover .project:not(:hover):not(.is-locked) {
+    opacity: 0.42;
+  }
+}
+
+.project-num {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.project-info h3 {
+  margin: 0 0 0.15rem;
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.project-info p {
+  margin: 0;
+  font-size: 0.86rem;
+  color: var(--muted);
+  font-weight: 300;
+}
+
+.project-tag {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.arrow {
+  justify-self: end;
+  font-size: 1rem;
+  color: var(--muted);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), color 0.3s ease;
+}
+
+@media (hover: hover) {
+  .project:hover .arrow {
+    transform: translateX(0.35rem);
+    color: var(--text);
+  }
+}
+
+.project.is-locked {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.project.is-locked:hover {
+  padding-left: 0;
+}
+
+.arrow-lock {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: var(--muted);
+}
+
+.arrow-lock svg {
+  display: block;
+  width: 1rem;
+  height: 1rem;
+}
+
+.project.is-locked:hover .arrow-lock {
+  transform: none;
+  color: var(--muted);
+}
+
+.projects-locked {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.4rem;
+  padding: 2.25rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.lock-icon {
+  margin-top: 2px;
+  color: var(--muted);
+}
+
+.lock-icon svg {
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.lock-body h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.15rem;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.lock-body p {
+  max-width: 46ch;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.lock-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.15rem;
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  font-weight: 300;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.lock-badge::before {
+  content: "";
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.projects-empty {
+  margin: 0;
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--line);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}

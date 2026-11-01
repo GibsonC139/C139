@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="C139 — programador de baixo nível. Rust, C, ESP32 e desenvolvimento web." />
+  <meta name="theme-color" content="#0a0a0a" />
+  <title>C139 — Programador de baixo nível</title>
+  <link rel="icon" type="image/x-icon" href="/assets/g.svg">
+
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/paths.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/code.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <link rel="stylesheet" href="css/projects.css" />
+  <link rel="stylesheet" href="css/quote.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+
+  <script src="js/boot.js"></script>
+
+  <noscript>
+    <style>
+      .reveal,
+      .section {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    </style>
+  </noscript>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a href="#top" class="logo">C<span>139</span></a>
+    <nav class="nav" aria-label="Navegação principal">
+      <a href="#sobre">Sobre</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-main">
+          <p class="eyebrow reveal">C139 — Low-Level</p>
+          <h1 class="hero-title reveal">
+            Do<br />
+            silício<br />
+            <span class="outline"><span class="outline-stroke">ao pixel</span><span class="outline-fill"
+                aria-hidden="true">ao pixel</span></span>
+          </h1>
+          <p class="hero-text reveal">
+            Baixo nível com Rust e C em sistemas, CLI e ESP32. E quando o projeto precisa de interface, uso Node, Vue e
+            React.
+          </p>
+        </div>
+        <div class="hero-code reveal">
+          <div class="code-card">
+            <div class="code-views">
+              <div class="code-view is-active" id="code-c" role="tabpanel" aria-labelledby="tab-c">
+                <div class="code-bar">
+                  <span class="code-file">main.c</span>
+                  <button type="button" class="run-btn" data-run aria-label="Executar o código em C">
+                    <i class="run-icon" aria-hidden="true"></i><span class="run-label">Executar</span>
+                  </button>
+                </div>
+                <pre class="code" tabindex="0"
+                  aria-label="Exemplo em C"><code><span class="ln" style="--i:0"><span class="tk-p">#include &lt;stdio.h&gt;</span></span><span class="ln" style="--i:1"></span><span class="ln" style="--i:2"><span class="tk-t">void</span> <span class="tk-f">sip</span>(<span class="tk-t">int</span> n, <span class="tk-k">const</span> <span class="tk-t">char</span> *t) {</span><span class="ln" style="--i:3">    <span class="tk-f">printf</span>(<span class="tk-s">&quot;cup %d: %s\n&quot;</span>, n, t);</span><span class="ln" style="--i:4">}</span><span class="ln" style="--i:5"></span><span class="ln" style="--i:6"><span class="tk-t">int</span> <span class="tk-f">main</span>(<span class="tk-t">void</span>) {</span><span class="ln" style="--i:7">    <span class="tk-f">puts</span>(<span class="tk-s">&quot;coffee + code = ?&quot;</span>);</span><span class="ln" style="--i:8">    <span class="tk-f">sip</span>(<span class="tk-n">1</span>, <span class="tk-s">&quot;what does this do?&quot;</span>);</span><span class="ln" style="--i:9">    <span class="tk-f">sip</span>(<span class="tk-n">2</span>, <span class="tk-s">&quot;oh, now I see it.&quot;</span>);</span><span class="ln" style="--i:10">    <span class="tk-f">sip</span>(<span class="tk-n">3</span>, <span class="tk-s">&quot;ship it.&quot;</span>);</span><span class="ln" style="--i:11">    <span class="tk-k">return</span> <span class="tk-n">0</span>;</span><span class="ln" style="--i:12">}</span></code></pre>
+                <div class="code-out" role="status" aria-live="polite" data-cmd="gcc main.c -o main &amp;&amp; ./main"
+                  data-result="coffee + code = ?|cup 1: what does this do?|cup 2: oh, now I see it.|cup 3: ship it.">
+                  <span class="out-idle">saída do programa</span>
+                </div>
+              </div>
+              <div class="code-view" id="code-rust" role="tabpanel" aria-labelledby="tab-rust">
+                <div class="code-bar">
+                  <span class="code-file">main.rs</span>
+                  <button type="button" class="run-btn" data-run aria-label="Executar o código em Rust">
+                    <i class="run-icon" aria-hidden="true"></i><span class="run-label">Executar</span>
+                  </button>
+                </div>
+                <pre class="code" tabindex="0"
+                  aria-label="Exemplo em Rust"><code><span class="ln" style="--i:0"><span class="tk-k">fn</span> <span class="tk-f">sip</span>(n: <span class="tk-t">u32</span>, t: &amp;<span class="tk-t">str</span>) {</span><span class="ln" style="--i:1">    <span class="tk-f">println!</span>(<span class="tk-s">&quot;cup {n}: {t}&quot;</span>);</span><span class="ln" style="--i:2">}</span><span class="ln" style="--i:3"></span><span class="ln" style="--i:4"><span class="tk-k">fn</span> <span class="tk-f">main</span>() {</span><span class="ln" style="--i:5">    <span class="tk-f">println!</span>(<span class="tk-s">&quot;coffee + code = ?&quot;</span>);</span><span class="ln" style="--i:6">    <span class="tk-f">sip</span>(<span class="tk-n">1</span>, <span class="tk-s">&quot;what does this do?&quot;</span>);</span><span class="ln" style="--i:7">    <span class="tk-f">sip</span>(<span class="tk-n">2</span>, <span class="tk-s">&quot;oh, now I see it.&quot;</span>);</span><span class="ln" style="--i:8">    <span class="tk-f">sip</span>(<span class="tk-n">3</span>, <span class="tk-s">&quot;ship it.&quot;</span>);</span><span class="ln" style="--i:9">}</span></code></pre>
+                <div class="code-out" role="status" aria-live="polite" data-cmd="rustc main.rs &amp;&amp; ./main"
+                  data-result="coffee + code = ?|cup 1: what does this do?|cup 2: oh, now I see it.|cup 3: ship it.">
+                  <span class="out-idle">saída do programa</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="lang-switch" role="tablist" aria-label="Linguagem do exemplo" data-lang="c">
+            <span class="lang-thumb" aria-hidden="true"></span>
+            <button type="button" class="lang-tab" role="tab" id="tab-c" data-lang="c" aria-selected="true"
+              aria-controls="code-c">
+              <i class="lang-icon icon-c" aria-hidden="true"></i>C
+            </button>
+            <button type="button" class="lang-tab" role="tab" id="tab-rust" data-lang="rust" aria-selected="false"
+              tabindex="-1" aria-controls="code-rust">
+              <i class="lang-icon icon-rust" aria-hidden="true"></i>Rust
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="hero-meta reveal">
+        <span class="meta-item">
+          <i class="meta-icon icon-cpu" aria-hidden="true"></i>
+          Sistemas &amp; Baixo nível
+        </span>
+        <span class="meta-item">
+          <i class="meta-icon icon-Earth" aria-hidden="true"></i>
+          Earth
+        </span>
+        <span class="status"><i class="dot" aria-hidden="true"></i>Hypervisor</span>
+      </div>
+      <a href="#projetos" class="scroll-hint" aria-label="Ver projetos">
+        <span>Role para ver</span>
+        <span class="line"></span>
+      </a>
+    </section>
+
+    <!-- SOBRE -->
+    <section id="sobre" class="section">
+      <div class="section-head">
+        <span class="index">01</span>
+        <h2>Sobre</h2>
+      </div>
+      <div class="section-body">
+        <p class="lead">
+          Programo — do firmware ao front-end.
+        </p>
+        <p>
+          Utilizo Rust e C: sistemas operacionais, ferramentas de terminal e firmware. Sem abstração inútil, gosto
+          de saber exatamente onde cada bit está batendo.
+        </p>
+        <p>
+          Pra parte visual, fecho com JavaScript/TypeScript, Vue, React e Node. Quando preciso de um script ou serviço
+          rápido, puxo Python, Ruby ou PHP. E pra guardar os dados, o bom e velho SQLite ou MySQL.
+        </p>
+        <p class="note">
+          Gosto de ESP32. Ver o código virar algo físico — sensores,
+          rádio, GPIO — é a melhor parte.
+        </p>
+        <div class="skills">
+          <div class="skill">
+            <span class="skill-label">Sistemas</span>
+            <span class="skill-items">Rust, C, ESP32</span>
+          </div>
+          <div class="skill">
+            <span class="skill-label">Web</span>
+            <span class="skill-items">JavaScript, TypeScript, Vue, React, Node.js</span>
+          </div>
+          <div class="skill">
+            <span class="skill-label">Scripts</span>
+            <span class="skill-items">Python, Ruby, PHP</span>
+          </div>
+          <div class="skill">
+            <span class="skill-label">Database</span>
+            <span class="skill-items">SQLite, MySQL</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJETOS -->
+    <section id="projetos" class="section">
+      <div class="section-head">
+        <span class="index">02</span>
+        <h2>Projetos</h2>
+      </div>
+      <div class="projects" id="projects-list">
+        <!-- Renderizado por js/projects.js a partir de data/projects.json -->
+      </div>
+    </section>
+
+    <!-- CITAÇÃO -->
+    <section class="section quote-section">
+      <div class="section-head">
+        <span class="index">03</span>
+        <h2>Citação</h2>
+      </div>
+      <div class="section-body">
+        <figure class="quote">
+          <blockquote class="quote-text" tabindex="0" role="button" aria-expanded="false" aria-label="Revelar citação">
+            <span class="quote-inner">"Não importa o quão talentoso você seja, você não pode mudar o mundo
+              sozinho."</span>
+          </blockquote>
+          <figcaption class="quote-hint">Clique para revelar</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="section contact">
+      <div class="section-head">
+        <span class="index">04</span>
+        <h2>Contato</h2>
+      </div>
+      <div class="section-body">
+        <p class="lead">Tem um projeto em mente?</p>
+        <ul class="links">
+          <li class="links-mail">
+            <a href="mailto:GibsonC139.Contact@proton.me" aria-label="Enviar email para GibsonC139.Contact@proton.me" title="GibsonC139.Contact@proton.me">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path fill="currentColor"
+                  d="M5 5h13a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V8a3 3 0 0 1 3-3m0 1c-.5 0-.94.17-1.28.47l7.78 5.03l7.78-5.03C18.94 6.17 18.5 6 18 6zm6.5 6.71L3.13 7.28C3.05 7.5 3 7.75 3 8v9a2 2 0 0 0 2 2h13a2 2 0 0 0 2-2V8c0-.25-.05-.5-.13-.72z" />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://signal.me/#eu/xGO24SgSyCAeJmqTzAh7IHFlXyMiRdw0h5nlYjX5HFjRzbS0RoRAx4ffFOvwSXwG" target="_blank" rel="noopener" aria-label="Signal" title="Signal">
+              <svg viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                  d="M9.156 33.457c-4.808-7.548-3.187-17.503 3.768-23.135s17.029-5.148 23.412 1.125s7.043 16.337 1.533 23.389s-15.435 8.847-23.065 4.17L7.52 40.51zm2.631 9.867l1.911-.448m-9.645-3.73l-.78 3.188c-.354 1.45.947 2.763 2.4 2.422l3.187-.746m-3.657-9.568l-.451 1.847m39.854-18.44a21.4 21.4 0 0 0-1.81-4.291M3.4 17.821a21.4 21.4 0 0 1 1.814-4.288m35.495-3.063a21.7 21.7 0 0 0-3.306-3.282M7.308 10.45a21.6 21.6 0 0 1 3.308-3.277m23.686-2.049a21.5 21.5 0 0 0-4.303-1.775M13.72 5.111a21.4 21.4 0 0 1 4.308-1.771m8.315-.713a21.8 21.8 0 0 0-4.656-.004M2.644 26.497a22 22 0 0 1 0-4.994m.75 8.648a21.4 21.4 0 0 0 1.81 4.291M44.6 30.179a21.4 21.4 0 0 1-1.814 4.288m-2.094 3.083a21.6 21.6 0 0 1-3.308 3.277m-23.686 2.049a21.5 21.5 0 0 0 4.303 1.775m16.279-1.762a21.4 21.4 0 0 1-4.308 1.771m15.384-18.163a22 22 0 0 0 0-4.994m-23.699 23.87a21.8 21.8 0 0 0 4.656.004" />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://mastodon.social/@GibsonC139" target="_blank" rel="noopener" aria-label="Mastodon" title="Mastodon">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+                  <path d="M7 13.5V9c0-3 5-3 5 0v3m5 1.5V9c0-3-5-3-5 0v3" />
+                  <path
+                    d="M8 17c7.5 1 13 0 13-4V9c0-5.5-4-6.5-6-6.5H9c-3 0-6.067 1-5.863 6.5c.074 1.987.036 4.385.363 7c1 8 10.5 5.5 12 5v-1.5S7.5 21 8 17" />
+                </g>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/GibsonC139" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path fill="currentColor"
+                  d="M21 10.955c0-1.84-.385-3.275-1.17-4.375c.4-2.655-.34-4.045-.425-4.2l-.265-.46l-.52.095c-.09.015-2.14.405-3.925 2.09c-.895-.09-1.82-.1-2.69-.1s-1.795.015-2.69.1C7.53 2.42 5.48 2.03 5.39 2.015l-.52-.095l-.265.46c-.09.155-.825 1.545-.425 4.2c-.79 1.1-1.17 2.54-1.17 4.375c0 4.24 2.84 5.73 5.45 6.255a3.8 3.8 0 0 0-.445 1.68c-.22.155-.59.36-1.005.36c-.615 0-.985-.42-1.545-1.1c-.6-.735-1.35-1.65-2.705-1.65h-.75V18h.75c.615 0 .985.42 1.545 1.1c.6.735 1.35 1.65 2.705 1.65c.37 0 .705-.075 1-.185V22h1.5v-3.005c0-.585.225-1.13.625-1.55c.75.06 1.41.06 1.875.06s1.12 0 1.875-.06c.4.42.625.97.625 1.55V22h1.5v-3.005c0-.63-.155-1.24-.45-1.78c2.605-.525 5.45-2.02 5.45-6.255zM12 16c-5.255 0-7.5-1.51-7.5-5.045c0-1.635.34-2.85 1.045-3.705l.22-.27l-.06-.34c-.255-1.43-.125-2.425.015-2.985c.675.23 1.8.735 2.78 1.75l.26.27l.37-.045c.925-.115 1.925-.13 2.87-.13s1.945.015 2.87.13l.37.045l.26-.27c.97-1.005 2.105-1.515 2.78-1.745c.14.565.27 1.56.015 2.985l-.06.34l.22.27c.7.855 1.045 2.065 1.045 3.705c0 3.535-2.245 5.045-7.5 5.045z" />
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>© <span id="year">2026</span> C139</span>
+    <a href="#top">Voltar ao topo ↑</a>
+  </footer>
+
+  <script defer src="js/paths.js"></script>
+  <script defer src="js/dot-field.js"></script>
+  <script defer src="js/header.js"></script>
+  <script defer src="js/reveal.js"></script>
+  <script defer src="js/code-switch.js"></script>
+  <script defer src="js/quote.js"></script>
+  <script defer src="js/projects.js"></script>
+  <script defer src="js/footer.js"></script>
+</body>
+
+</html>

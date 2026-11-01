@@ -1,0 +1,26 @@
+{
+  "lockdown": true,
+  "lockdownMessage": "Estou construindo os primeiros projetos. Esta seção volta em breve.",
+  "projects": [
+    {
+      "name": "Em construção",
+      "description": "Ainda não publicado",
+      "year": 2026,
+      "tags": [
+        ""
+      ],
+      "url": "",
+      "locked": true
+    },
+    {
+      "name": "Em construção",
+      "description": "Ainda não publicado",
+      "year": 2026,
+      "tags": [
+        ""
+      ],
+      "url": "",
+      "locked": true
+    }
+  ]
+}

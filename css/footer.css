@@ -1,0 +1,26 @@
+.site-footer {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 2.5rem clamp(1.25rem, 5vw, 3.5rem) 3rem;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  justify-content: space-between;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.site-footer a {
+  transition: color 0.3s ease;
+}
+
+@media (hover: hover) {
+  .site-footer a:hover {
+    color: var(--text);
+  }
+}

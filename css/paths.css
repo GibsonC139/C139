@@ -1,0 +1,57 @@
+.bg-paths {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 100vw;
+    margin-left: -50vw;
+    z-index: -1;
+    pointer-events: none;
+    color: var(--text);
+    -webkit-mask-image:
+        linear-gradient(to bottom, transparent, #000 15%, #000 85%, transparent),
+        radial-gradient(ellipse 40% 32% at 50% 50%, rgb(0 0 0 / 0.3), #000);
+    mask-image:
+        linear-gradient(to bottom, transparent, #000 15%, #000 85%, transparent),
+        radial-gradient(ellipse 40% 32% at 50% 50%, rgb(0 0 0 / 0.3), #000);
+    -webkit-mask-composite: source-in;
+    mask-composite: intersect;
+}
+
+.bg-paths canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+
+.bg-field {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 100vw;
+    margin-left: -50vw;
+    z-index: -1;
+    pointer-events: none;
+    color: var(--text);
+    -webkit-mask-image:
+        linear-gradient(to bottom, transparent, #000 12%, #000 82%, transparent),
+        radial-gradient(ellipse 75% 70% at 50% 50%, #000 40%, transparent 100%),
+        radial-gradient(ellipse 34% 22% at 50% 50%, rgb(0 0 0 / 0.35), #000 100%);
+    mask-image:
+        linear-gradient(to bottom, transparent, #000 12%, #000 82%, transparent),
+        radial-gradient(ellipse 75% 70% at 50% 50%, #000 40%, transparent 100%),
+        radial-gradient(ellipse 34% 22% at 50% 50%, rgb(0 0 0 / 0.35), #000 100%);
+    -webkit-mask-composite: source-in;
+    mask-composite: intersect;
+}
+
+.bg-field canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}

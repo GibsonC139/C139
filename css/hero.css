@@ -1,0 +1,201 @@
+.hero {
+  min-height: 100vh;
+  min-height: 100svh;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: clamp(7rem, 18vh, 11rem) clamp(1.25rem, 5vw, 3.5rem) 5.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.eyebrow {
+  margin: 0 0 2rem;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 300;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.hero-title {
+  margin: 0;
+  font-size: clamp(3.4rem, 12.5vw, 9.5rem);
+  font-weight: 300;
+  line-height: 0.92;
+  letter-spacing: -0.045em;
+}
+
+.hero-title .outline {
+  position: relative;
+  display: inline-block;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.hero-title .outline-stroke {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--text);
+}
+
+.hero-title .outline-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--bg);
+  -webkit-text-stroke: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+.hero-text {
+  max-width: 38ch;
+  margin: 2.4rem 0 0;
+  color: var(--muted);
+  font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+  font-weight: 300;
+}
+
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 0;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.hero-meta>span {
+  padding: 0 1.4rem;
+  border-left: 1px solid var(--line);
+  line-height: 1.4;
+}
+
+.hero-meta>span:first-child {
+  padding-left: 0;
+  border-left: 0;
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.meta-icon {
+  width: 1.35em;
+  height: 1.35em;
+  flex: none;
+  background-color: currentColor;
+  -webkit-mask: var(--icon) center / contain no-repeat;
+  mask: var(--icon) center / contain no-repeat;
+}
+
+.icon-cpu {
+  --icon: url("../assets/icons/cpu.svg");
+}
+
+.icon-Earth {
+  --icon: url("../assets/icons/Earth.svg");
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--text);
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--text);
+  animation: pulse 3s ease-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(244, 244, 244, 0.4);
+  }
+
+  70% {
+    box-shadow: 0 0 0 7px rgba(244, 244, 244, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(244, 244, 244, 0);
+  }
+}
+
+.scroll-hint {
+  position: absolute;
+  bottom: 2.5rem;
+  left: clamp(1.25rem, 5vw, 3.5rem);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 300;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  transition: color 0.3s ease;
+}
+
+@media (hover: hover) {
+  .scroll-hint:hover {
+    color: var(--text);
+  }
+}
+
+.scroll-hint .line {
+  display: block;
+  width: 3.5rem;
+  height: 1px;
+  background: var(--line-strong);
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-hint .line::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--text);
+  transform: translateX(-100%);
+  animation: slide 2.4s ease-in-out infinite;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  60%,
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  animation: reveal 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes reveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
